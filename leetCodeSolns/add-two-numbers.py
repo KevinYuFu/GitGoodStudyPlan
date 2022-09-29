@@ -31,12 +31,7 @@ def numToList2(num: int) -> Optional[ListNode]:
     if num < 10:
         return ListNode(num)
 
-    newNode = ListNode(num % 10)
-    newNode.next = numToList2(int(num/10))
-    return newNode
-
-    # Faster:
-    #return ListNode(num%10, numToList2(int(num/10)))
+    return ListNode(num%10, numToList2(int(num/10)))
 
 # Print List
 def printLinkedList(listNode):
@@ -48,7 +43,3 @@ class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         pass
 
-
-printLinkedList(numToList1(123))
-print("_____")
-printLinkedList(numToList2(123))
